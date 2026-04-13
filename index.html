@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operación Flechazo: Buscando el Amor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="heart-background">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <header class="hero-section text-center py-5">
+        <div class="container">
+            <h1 class="love-title">¿Buscas tu Media Naranja? ❤️</h1>
+            <p class="love-subtitle">Conoce al soltero más codiciado y postúlate para conquistar su corazón.</p>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+        <div class="row g-4 align-items-center">
+            <section class="col-lg-6">
+                <div class="love-card text-center h-100">
+                    <h2 class="section-title">El Candidato</h2>
+                    <div class="photo-container mx-auto mb-4">
+                        <img src="maduro.jpg" alt="Foto del Candidato" id="foto">
+                    </div>
+                    <div class="stats-container">
+                        <p><strong>Carisma:</strong> ❤️❤️❤️❤️❤️</p>
+                        <p><strong>Humor:</strong> ❤️❤️❤️❤️🖤</p>
+                        <p><strong>Cocina:</strong> ❤️❤️❤️❤️🖤</p>
+                    </div>
+                    <p class="description mt-3">Un chico increíble, leal y divertido que busca a alguien especial para compartir risas, cafés y atardeceres. ¡No dejes pasar esta oportunidad!</p>
+                </div>
+            </section>
+
+            <section class="col-lg-6">
+                <div class="love-card h-100">
+                    <h2 class="section-title text-center">¡Postúlate!</h2>
+                  <form action="https://formspree.io/f/xlgaejrn" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label">Tu Nombre o Alias</label>
+        <input type="text" name="nombre" class="love-input" placeholder="Ej: Julieta" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">¿Por qué eres su pareja ideal?</label>
+        <textarea name="mensaje" class="love-input" rows="4" placeholder="Cuéntanos un poco sobre ti..."></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Sube tu mejor foto</label>
+        <input type="file" name="foto_aspirante" class="love-input" accept="image/*">
+    </div>
+    <button type="submit" class="w-100 love-btn mt-3">Enviar Flechazo 💘</button>
+</form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="success-msg" class="modal-love d-none">
+        <div class="modal-content-love text-center">
+            <h3>¡Flechazo Enviado! 🥰</h3>
+            <p>Tu solicitud ha sido recibida. ¡Mucha suerte!</p>
+            <button onclick="closeModal()" class="love-btn-small">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

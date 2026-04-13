@@ -1,0 +1,190 @@
+:root {
+    --bg-color: #fff5f8;
+    --main-pink: #ff85a2;
+    --dark-pink: #ff4d6d;
+    --heart-red: #ff0a54;
+    --text-color: #594157;
+    --title-font: 'Pacifico', cursive;
+    --body-font: 'Fredoka', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Fondo de corazones animados */
+.heart-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 133, 162, 0.3);
+    transform: rotate(-45deg);
+    bottom: -100px;
+    animation: floatUp 6s ease-in infinite;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: 10px; top: 0; }
+
+/* Posiciones y retrasos aleatorios para los corazones */
+.heart:nth-child(1) { left: 10%; animation-duration: 6s; animation-delay: 0s; }
+.heart:nth-child(2) { left: 30%; animation-duration: 8s; animation-delay: 1s; width: 15px; height: 15px; }
+.heart:nth-child(3) { left: 50%; animation-duration: 10s; animation-delay: 2s; }
+.heart:nth-child(4) { left: 70%; animation-duration: 7s; animation-delay: 3s; width: 25px; height: 25px; }
+.heart:nth-child(5) { left: 90%; animation-duration: 9s; animation-delay: 4s; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(-45deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(-45deg); opacity: 0; }
+}
+
+/* Tipografía */
+.love-title {
+    font-family: var(--title-font);
+    color: var(--heart-red);
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.love-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.section-title {
+    color: var(--dark-pink);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Tarjetas (Cards) */
+.love-card {
+    background: #fff;
+    border-radius: 25px;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(255, 133, 162, 0.2);
+    border: 2px solid rgba(255, 133, 162, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.love-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Contenedor de la foto (Fija el tamaño y la forma) */
+.photo-container {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Foto redonda */
+    border: 5px solid var(--main-pink);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* La foto (Ajuste perfecto) */
+#foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Muestra el centro de la foto sin deformar */
+    display: block;
+}
+
+/* Inputs del Formulario */
+.love-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid rgba(255, 133, 162, 0.2);
+    border-radius: 15px;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+    transition: border-color 0.3s;
+}
+
+.love-input:focus {
+    outline: none;
+    border-color: var(--main-pink);
+    box-shadow: 0 0 5px rgba(255, 133, 162, 0.5);
+}
+
+/* Botón */
+.love-btn {
+    background-color: var(--heart-red);
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: var(--body-font);
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 10px rgba(255, 10, 84, 0.3);
+}
+
+.love-btn:hover {
+    background-color: var(--dark-pink);
+}
+
+.love-btn:active {
+    transform: scale(0.98);
+}
+
+/* Modal */
+.modal-love {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(89, 65, 87, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content-love {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.love-btn-small {
+    background-color: var(--dark-pink);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: var(--body-font);
+    margin-top: 1rem;
+}
